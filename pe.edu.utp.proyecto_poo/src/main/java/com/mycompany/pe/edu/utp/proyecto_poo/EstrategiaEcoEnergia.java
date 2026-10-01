@@ -1,6 +1,6 @@
 package com.mycompany.pe.edu.utp.proyecto_poo;
 
-public class EstrategiaEcoEnergia implements Estrategia<EntradaEnergia, Object> {
+public class EstrategiaEcoEnergia implements Estrategia<EntradaEnergia, ResultadoEnergia> {
 
     @Override
     public String id() {
@@ -13,7 +13,7 @@ public class EstrategiaEcoEnergia implements Estrategia<EntradaEnergia, Object> 
     }
 
     @Override
-    public Object ejecutar(EntradaEnergia entrada) {
+    public ResultadoEnergia ejecutar(EntradaEnergia entrada) {
         
         double consumoActual = entrada.getConsumo();
         double temperatura = entrada.getTemperatura();
@@ -32,6 +32,8 @@ public class EstrategiaEcoEnergia implements Estrategia<EntradaEnergia, Object> 
         double ahorroObtenido = consumoActual * porcentajeAhorro;
         double consumoFinal = consumoActual - ahorroObtenido;
         
-        return null;
+        String accion = "Reducir consumo para mejorar el ahorro energetico";
+        
+        return new ResultadoEnergia(consumoActual, consumoFinal, porcentajeAhorro * 100, accion, id());
     }
 }
