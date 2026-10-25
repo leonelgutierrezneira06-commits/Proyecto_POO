@@ -11,6 +11,23 @@ package com.mycompany.pe.edu.utp.proyecto_poo;
 public class PeEduUtpProyecto_poo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        EntradaEnergia entrada = new EntradaEnergia(
+            750,
+            68,
+            50,
+            "PC Escritorio"
+        );
+
+        EstrategiaEcoEnergia estrategia = new EstrategiaEcoEnergia();
+
+        ResultadoEnergia resultado = estrategia.ejecutar(entrada);
+
+        System.out.println("=== PRUEBA CONTROL ENERGETICO ===");
+        System.out.println("Estrategia: " + resultado.getEstrategiaId());
+        System.out.println("Consumo original: " + resultado.getConsumoOriginal() + " W");
+        System.out.println("Consumo final: " + resultado.getConsumoFinal() + " W");
+        System.out.println("Ahorro: " + resultado.getPorcentajeAhorro() + "%");
+        System.out.println("Accion: " + resultado.getAccion());
     }
 }
