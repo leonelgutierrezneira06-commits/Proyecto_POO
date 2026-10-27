@@ -11,6 +11,8 @@ package com.mycompany.pe.edu.utp.proyecto_poo;
 public class PeEduUtpProyecto_poo {
 
     public static void main(String[] args) {
+        System.out.println("Hello World!");
+        ConexionSQLite.crearTablasIniciales();
         
         EntradaEnergia entrada = new EntradaEnergia(
             750,
